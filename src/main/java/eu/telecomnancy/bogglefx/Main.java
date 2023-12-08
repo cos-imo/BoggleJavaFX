@@ -4,9 +4,11 @@ import java.io.IOException;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.application.Platform;
+import eu.telecomnancy.boggleFX.PanneauControle.*;
 
 public class Main extends Application {
 
@@ -18,14 +20,11 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws IOException {
         primaryStage.setTitle("JavaFx Demo");
 
-        Button button = new Button("Click Me!");
+        BorderPane root = new BorderPane();
 
-        button.setOnAction(e -> {
-            System.out.println("Bye!");
-            Platform.exit();
-        });
+        root.setCenter(new PanneauControle());
 
-        Scene scene = new Scene(button, 400, 400);
+        Scene scene = new Scene(root, 1000, 700);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
