@@ -23,6 +23,7 @@ public class Main extends Application {
         BorderPane root = new BorderPane();
 
         root.setRight(new PanneauControle());
+        root.setTop(new MenuJeu());
 
         Scene scene = new Scene(root, 1000, 700);
         primaryStage.setScene(scene);
