@@ -22,7 +22,7 @@ public class Main extends Application {
 
         BorderPane root = new BorderPane();
 
-        root.setCenter(new PanneauControle());
+        root.setRight(new PanneauControle());
 
         Scene scene = new Scene(root, 1000, 700);
         primaryStage.setScene(scene);
