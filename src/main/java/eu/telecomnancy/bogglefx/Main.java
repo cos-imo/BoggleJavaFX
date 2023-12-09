@@ -24,6 +24,7 @@ public class Main extends Application {
 
         root.setRight(new PanneauControle());
         root.setTop(new MenuJeu());
+        root.setCenter(new VueLettres());
 
         Scene scene = new Scene(root, 1000, 700);
         primaryStage.setScene(scene);
