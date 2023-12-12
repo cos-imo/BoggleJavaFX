@@ -4,20 +4,22 @@ import javafx.application.Platform;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox; 
 import javafx.scene.layout.GridPane;
+import boggle.model.*;
 
 public class VueLettres extends GridPane {
 
-    private Button[] btns = new Button[30];
+    private Button[] btns;
 
-    public VueLettres() {
+    public VueLettres(Boggle boggle) {
       super();
+      int size = boggle.size();
+      btns = new Button[size*size];
 
       for (int i=0; i<btns.length; i++){
-        btns[i] = new Button("Button i-"+i);
+        btns[i] = new Button(String.valueOf(boggle.getLettre(i%size, i/size)));
       }
 
       int i = 0;
-      int size = 4;
         for(Button b : btns) {
           //Event Listener
             GridPane.setRowIndex(b, i%size);
