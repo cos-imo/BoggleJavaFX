@@ -9,6 +9,8 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.application.Platform;
 import eu.telecomnancy.boggleFX.PanneauControle.*;
+import boggle.model.Boggle;
+
 
 public class Main extends Application {
 
@@ -18,13 +20,19 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        primaryStage.setTitle("JavaFx Demo");
+        primaryStage.setTitle("BoggleFX");
+
+        VueInfos infos = new VueInfos(boggle);
+
+        Boggle boggle = new Boggle(4, infos);
+
 
         BorderPane root = new BorderPane();
 
-        root.setRight(new PanneauControle());
+        root.setRight(new PanneauControle(boggle));
         root.setTop(new MenuJeu());
-        root.setCenter(new VueLettres());
+        root.setCenter(new VueLettres(boggle, infos));
+        root.setBottom(infos);
 
         Scene scene = new Scene(root, 1000, 700);
         primaryStage.setScene(scene);

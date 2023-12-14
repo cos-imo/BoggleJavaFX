@@ -1,4 +1,4 @@
-package eu.telecomnancy.boggleFX;
+package boggleFXML.model;  
 
 import java.io.InputStream;
 import java.util.ArrayList;
