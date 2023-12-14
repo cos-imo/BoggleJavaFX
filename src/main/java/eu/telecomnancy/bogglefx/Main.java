@@ -1,5 +1,7 @@
 package eu.telecomnancy.boggleFX;
 
+import eu.telecomnancy.labfx.Boggle;
+
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -9,8 +11,6 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.application.Platform;
 import eu.telecomnancy.boggleFX.PanneauControle.*;
-import boggle.model.Boggle;
-
 
 public class Main extends Application {
 
@@ -28,7 +28,7 @@ public class Main extends Application {
 
         BorderPane root = new BorderPane();
 
-        root.setRight(new PanneauControle(boggle));
+        root.setRight(new PanneauControle(boggle, infos));
         root.setTop(new MenuJeu());
         root.setCenter(new VueLettres(boggle, infos));
         root.setBottom(infos);

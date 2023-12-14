@@ -1,6 +1,6 @@
 package eu.telecomnancy.boggleFX;
 
-import boggle.model.Boggle;
+import eu.telecomnancy.labfx.Boggle;
 
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -13,9 +13,7 @@ public class EcouteurValider implements EventHandler<ActionEvent> {
         this.boggle = boggle;
     }
 
-    @Override
     public void handle(ActionEvent event) {
-        System.out.println("Valider");
-        boggle.valider();
+        this.boggle.valider();
     }
 }

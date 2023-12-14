@@ -1,6 +1,6 @@
 package eu.telecomnancy.boggleFX;
 
-import boggle.model.Boggle;
+import eu.telecomnancy.labfx.Boggle;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -17,7 +17,6 @@ public class EcouteurLettre implements EventHandler<ActionEvent> {
         this.colonne = colonne;
     }
 
-    @Override
     public void handle(ActionEvent event) {
         boggle.ajouterLettre(ligne, colonne);
     }

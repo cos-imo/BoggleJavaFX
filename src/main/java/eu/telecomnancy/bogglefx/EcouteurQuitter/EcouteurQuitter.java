@@ -1,6 +1,6 @@
 package eu.telecomnancy.boggleFX;
 
-import boggle.model.Boggle;
+import eu.telecomnancy.labfx.Boggle;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;

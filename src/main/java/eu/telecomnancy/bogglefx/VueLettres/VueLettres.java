@@ -1,5 +1,7 @@
 package eu.telecomnancy.boggleFX;
 
+import eu.telecomnancy.labfx.Boggle;
+
 import javafx.application.Platform;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox; 
@@ -60,10 +62,9 @@ public class VueLettres extends GridPane implements Observateur {
 
     @Override
     public void reagir() {
-        for (int i = 0; i < boggle.size(); i++) {
-            for (int j = 0; j < boggle.size(); j++) {
-                btns[i+i*j].setText(boggle.getLettre(i, j) + "");
-            }
+        int size = boggle.size();
+        for (int i = 0; i < boggle.size()*boggle.size(); i++) {
+          btns[i].setText(boggle.getLettre(i%size, i/size) + "");
         }
     }
 

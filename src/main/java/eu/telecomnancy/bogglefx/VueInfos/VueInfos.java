@@ -1,5 +1,7 @@
 package eu.telecomnancy.boggleFX;
 
+import eu.telecomnancy.labfx.Boggle;
+
 import javafx.application.Platform;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -31,10 +33,8 @@ public class VueInfos extends GridPane implements Observateur {
     this.boggle.ajouterObservateur(this);
   }
 
-  @Override
   public void reagir(){
     this.scoreLabel.setText("Score : " + this.boggle.getScore());
     this.mot.setText("Mot choisi: " + this.boggle.getMotChoisi());
-    //this.mot.setText("OK");
   }
 }

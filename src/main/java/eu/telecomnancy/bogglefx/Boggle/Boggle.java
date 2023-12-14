@@ -1,7 +1,10 @@
-package boggle.model;
+package eu.telecomnancy.labfx;
 
+import eu.telecomnancy.labfx.Dictionnaire;
+
+import java.util.ArrayList;
+import java.util.Random;
 import boggle.model.Observable;
-import eu.telecomnancy.boggleFX.Dictionnaire;
 
 import java.util.ArrayList;
 import java.util.Random;
