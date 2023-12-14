@@ -8,8 +8,8 @@ public class Observable{
   public void ajouterObservateur(Observateur o) {
       this.obs.add(o) ;
   }
+
   public void notifierObservateurs() {
       for (Observateur o : this.obs) o.reagir() ;
-
   }
 }

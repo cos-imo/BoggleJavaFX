@@ -5,7 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.VBox; 
 import boggle.model.*;
 
-public class PanneauControle extends VBox {
+public class PanneauControle extends VBox implements Observateur {
 
     private Button valider;
     private Button effacer;
@@ -18,20 +18,22 @@ public class PanneauControle extends VBox {
       this.quitter = new Button("Quitter");
 
       this.valider.setOnAction(e -> {
-          System.out.println("Validation");
-          boggle.valider();
+        new EcouteurValider(boggle);
       });
 
       this.effacer.setOnAction(e -> {
-          System.out.println("Effacer");
-          boggle.effacer();
+        new EcouteurEffacer(boggle);
       });
 
       this.quitter.setOnAction(e -> {
-          System.out.println("Bye");
-          Platform.exit();
+        Platform.exit();
       });
 
       getChildren().addAll(valider, effacer, quitter);
+    }
+
+    @Override
+    public void reagir(){
+
     }
 }

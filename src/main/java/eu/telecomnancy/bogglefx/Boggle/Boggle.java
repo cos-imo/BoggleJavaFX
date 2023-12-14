@@ -1,7 +1,7 @@
 package boggle.model;
 
 import boggle.model.Observable;
-import boggleFXML.model.Dictionnaire;
+import eu.telecomnancy.boggleFX.Dictionnaire;
 
 import java.util.ArrayList;
 import java.util.Random;
