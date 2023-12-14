@@ -8,23 +8,21 @@ import java.util.Random;
 
 import eu.telecomnancy.boggleFX.*;
 
-public class Boggle  {
+public class Boggle extends Observable {
 
-    private ArrayList<Observateur> obs = new ArrayList<>(10);
     private static char[] voyelles = {'A', 'E', 'I', 'O', 'U', 'Y'};
     private static char[] consonnes = {'B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Z'};
     private char[][] lettres;
     private StringBuilder mot;
     private int score = 0;
     private int ligneChoisie, colonneChoisie ;  // dernière case choisie
-    private VueInfos vueinfos;
 
     /**
      * Des voyelles sur les lignes impaires ; des consonnes sur les lignes paires
      * @param taille
      * @exception AssertionError taille <= 1
      */
-    public Boggle(int taille, VueInfos infos) {
+    public Boggle(int taille) {
         assert (taille > 1) : "Trop petit";
         this.lettres = new char[taille][taille];
         Random gen = new Random();
@@ -35,10 +33,6 @@ public class Boggle  {
             else
                 for (int col = 0; col < taille; col++)
                     lettres[lig][col] = consonnes[gen.nextInt(20)];
-
-        this.vueinfos = infos;
-
-        //this.vueinfos.mot.setText("Initialisé par Boggle");
 
         this.mot = new StringBuilder("");
         this.ligneChoisie = -1 ;
@@ -124,6 +118,7 @@ public class Boggle  {
         this.mot = new StringBuilder("");
         this.ligneChoisie = -1 ;
         this.colonneChoisie = -1 ;
+        this.notifierObservateurs();
     }
 
 
@@ -138,15 +133,8 @@ public class Boggle  {
             this.mot.append(this.getLettre(lig, col));
             this.ligneChoisie = lig;
             this.colonneChoisie = col;
+            this.notifierObservateurs();
         }
-    }
-
-    public void ajouterObservateur(Observateur o) {
-      this.obs.add(o) ;
-    }
-
-   public void notifierObservateurs() {
-      for (Observateur o : this.obs) o.reagir() ;
     }
 
 }

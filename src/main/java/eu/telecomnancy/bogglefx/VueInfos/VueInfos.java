@@ -8,15 +8,24 @@ import javafx.scene.layout.GridPane;
 import boggle.model.*;
 import javafx.scene.text.Font;
 
-public class VueInfos extends GridPane {
+public class VueInfos extends GridPane implements Observateur {
 
   public Label mot;
+  private Boggle boggle;
 
-  public VueInfos() {
+  public VueInfos(Boggle boggle) {
     super();
-    Label mot = new Label("Test");
-    mot.setFont(Font.font ("Verdana", 40));
+    this.mot = new Label("Mot choisi: <Aucun>");
+    this.mot.setFont(Font.font ("Verdana", 40));
+    
+    this.boggle = boggle;
+    this.boggle.ajouterObservateur(this);
 
     this.getChildren().addAll(mot);
+  }
+
+  @Override
+  public void reagir(){
+    this.mot.setText("Valide");
   }
 }

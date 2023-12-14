@@ -17,19 +17,17 @@ public class PanneauControle extends VBox {
       this.effacer = new Button("Effacer");
       this.quitter = new Button("Quitter");
 
-      valider.setOnAction(e -> {
+      this.valider.setOnAction(e -> {
           System.out.println("Validation");
           boggle.valider();
-          Platform.exit();
       });
 
-      effacer.setOnAction(e -> {
+      this.effacer.setOnAction(e -> {
           System.out.println("Effacer");
           boggle.effacer();
-          boggle.effacer();
       });
 
-      quitter.setOnAction(e -> {
+      this.quitter.setOnAction(e -> {
           System.out.println("Bye");
           Platform.exit();
       });

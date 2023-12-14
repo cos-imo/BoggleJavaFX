@@ -21,11 +21,10 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         primaryStage.setTitle("BoggleFX");
+        
+        Boggle boggle = new Boggle(4);
 
-        VueInfos infos = new VueInfos();
-
-        Boggle boggle = new Boggle(4, infos);
-
+        VueInfos infos = new VueInfos(boggle);
 
         BorderPane root = new BorderPane();
 
