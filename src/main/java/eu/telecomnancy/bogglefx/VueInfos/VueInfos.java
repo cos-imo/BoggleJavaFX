@@ -22,7 +22,7 @@ public class VueInfos extends GridPane implements Observateur {
     this.mot = new Label("Mot choisi: <Aucun>");
     this.mot.setFont(Font.font ("Verdana", 40));
     
-    this.scoreLabel = new Label("Score : " + boggle.getScore());
+    this.scoreLabel = new Label("\tScore : " + boggle.getScore());
     this.scoreLabel.setFont(Font.font("Verdana", 40));
 
     HBox hbox = new HBox(this.mot, this.scoreLabel);
@@ -34,7 +34,7 @@ public class VueInfos extends GridPane implements Observateur {
   }
 
   public void reagir(){
-    this.scoreLabel.setText("Score : " + this.boggle.getScore());
+    this.scoreLabel.setText("\tScore : " + this.boggle.getScore());
     this.mot.setText("Mot choisi: " + this.boggle.getMotChoisi());
   }
 }

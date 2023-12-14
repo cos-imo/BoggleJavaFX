@@ -48,11 +48,9 @@ public class VueLettres extends GridPane implements Observateur {
             final int lin = i%size;
             final int col = i/size;
             b.setStyle("-fx-font-size:40; -fx-border-color:#000000; -fx-background-color: #4CB9E7;");
-            b.setOnAction(e -> {
-              new EcouteurLettre(boggle, lin, col);
-              //boggle.ajouterLettre(lin, col);
-              System.out.println("Bouton cliqué");
-            });
+            b.setOnAction(
+              new EcouteurLettre(boggle, lin, col)
+            );
             GridPane.setRowIndex(b, lin);
             GridPane.setColumnIndex(b, col);
             i++;
@@ -68,8 +66,4 @@ public class VueLettres extends GridPane implements Observateur {
         }
     }
 
-    //@Override
-    //public void reagir(){
-      //this.infos.mot.setText(this.boggle.getMotChoisi());
-    //}
 }

@@ -25,7 +25,7 @@ public class PanneauControle extends VBox implements Observateur {
 
       
       this.valider.setOnAction(
-        new EcouteurValider(boggle)
+              new EcouteurValider(boggle)
       );
 
       this.effacer.setOnAction(e -> {
