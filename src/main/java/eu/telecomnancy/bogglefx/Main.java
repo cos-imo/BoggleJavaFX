@@ -22,7 +22,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws IOException {
         primaryStage.setTitle("BoggleFX");
 
-        VueInfos infos = new VueInfos(boggle);
+        VueInfos infos = new VueInfos();
 
         Boggle boggle = new Boggle(4, infos);
 

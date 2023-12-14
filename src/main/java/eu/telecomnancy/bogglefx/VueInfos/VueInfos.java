@@ -12,7 +12,7 @@ public class VueInfos extends GridPane {
 
   public Label mot;
 
-  public VueInfos(Boggle boggle) {
+  public VueInfos() {
     super();
     Label mot = new Label("Test");
     mot.setFont(Font.font ("Verdana", 40));

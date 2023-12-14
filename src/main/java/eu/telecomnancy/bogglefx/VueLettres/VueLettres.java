@@ -25,17 +25,32 @@ public class VueLettres extends GridPane implements Observateur {
 
       for (int i=0; i<btns.length; i++){
         btns[i] = new Button(String.valueOf(boggle.getLettre(i%size, i/size)));
+        btns[i].setPrefWidth(125);
+        btns[i].setPrefHeight(125);
+
+        final int index = i;
+
+        btns[i].setStyle("-fx-background-color: #4CB9E7; -fx-font-size: 40; -fx-border-color: #000000;");
+
+        btns[i].setOnMouseEntered(event -> {
+            btns[index].setStyle("-fx-background-color: #3559E0; -fx-font-size: 40; -fx-border-color: #000000");
+        });
+        btns[i].setOnMouseExited(event -> {
+            btns[index].setStyle("-fx-background-color: #4CB9E7; -fx-font-size: 40; -fx-border-color:#000000");
+        });
+      btns[i].setOnAction(event -> {
+            btns[index].setStyle("-fx-background-color: #0F2167; -fx-font-size: 40; -fx-border-color:#000000");
+        });
+
       }
 
       int i = 0;
         for(Button b : btns) {
-          //Event Listener
             final int lin = i%size;
             final int col = i/size;
-            b.setStyle("-fx-font-size:40");
+            b.setStyle("-fx-font-size:40; -fx-border-color:#000000, -fx-background-color: #2980b9;");
             b.setOnAction(e -> {
               boggle.ajouterLettre(lin, col);
-              //b.setStyle("-fx-background-color: #ff0000; ");
             });
             GridPane.setRowIndex(b, i%size);
             GridPane.setColumnIndex(b, i/4);

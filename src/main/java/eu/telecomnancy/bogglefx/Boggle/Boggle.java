@@ -17,6 +17,7 @@ public class Boggle  {
     private StringBuilder mot;
     private int score = 0;
     private int ligneChoisie, colonneChoisie ;  // dernière case choisie
+    private VueInfos vueinfos;
 
     /**
      * Des voyelles sur les lignes impaires ; des consonnes sur les lignes paires
@@ -34,6 +35,10 @@ public class Boggle  {
             else
                 for (int col = 0; col < taille; col++)
                     lettres[lig][col] = consonnes[gen.nextInt(20)];
+
+        this.vueinfos = infos;
+
+        //this.vueinfos.mot.setText("Initialisé par Boggle");
 
         this.mot = new StringBuilder("");
         this.ligneChoisie = -1 ;
